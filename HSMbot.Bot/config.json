@@ -1,0 +1,7 @@
+﻿{
+  "token": "ODg4NTA5MjY5NzA2NjcwMTQw.YUTuvQ.dYn6sToi44_kK_mIG_nmXCaNmjw",
+  "prefix": "*",
+  "ConnectionString": {
+    "Default": "server=localhost;database=HSMBot;user=root;password=Erokate_313144163131"
+  }
+}
