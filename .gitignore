@@ -362,5 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-#
+# İstenmeyen Dosyalar
 config.jsonconfig.json 
+*.bak
