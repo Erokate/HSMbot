@@ -2,7 +2,7 @@
 ![HSMLogo](https://i.ibb.co/R2PZh06/HSM-free-file.png)
 
     
-# HSM ![Discord](https://img.shields.io/discord/755456457352282253?color=blue&label=Discord) ![License](https://img.shields.io/github/license/Erokate/HSMbot) ![Botu Sunucuna Al](https://img.shields.io/badge/dynamic/xml?color=blue&label=HSM&prefix=Sunucuna%20Al&query=%2A&url=https%3A%2F%2Fdiscord.com%2Fapi%2Foauth2%2Fauthorize%3Fclient_id%3D888509269706670140%26permissions%3D8%26scope%3Dbot)
+# HSM [![Discord](https://img.shields.io/discord/755456457352282253?color=blue&label=Discord)](https://discord.gg/FZxG8Kc2) [![License](https://img.shields.io/github/license/Erokate/HSMbot)](https://github.com/Erokate/HSMbot/blob/master/LICENSE.txt) [![Botu Sunucuna Al](https://img.shields.io/badge/dynamic/xml?color=blue&label=HSM&prefix=Sunucuna%20Al&query=%2A&url=https%3A%2F%2Fdiscord.com%2Fapi%2Foauth2%2Fauthorize%3Fclient_id%3D888509269706670140%26permissions%3D8%26scope%3Dbot)](https://discord.com/api/oauth2/authorize?client_id=888509269706670140&permissions=8&scope=bot)
 
 C# kullanılarak tek başıma geliştiriyor olduğum Discord botu.
 Bu bot discord sunucunuzda hem arkadaşlarınızla eğlenmek, hem de moderasyon için kullanılması amacıyla yapılıyor.
