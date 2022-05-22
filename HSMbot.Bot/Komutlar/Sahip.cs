@@ -55,8 +55,8 @@ namespace HSMbot.Komutlar
                 .WithAuthor(ctx.Client.CurrentUser.Username);
             foreach (DiscordGuild sunucu in sunucular)
             {
-                int kanalSayisi = ( sunucu.Channels.ToString()).Count();
-                int uyeSayisi = ( sunucu.MemberCount.ToString()).Count();
+                int kanalSayisi = sunucu.Channels.Count();
+                int uyeSayisi = sunucu.MemberCount;
                 string sunucuBilgisi = $"{kanalSayisi} Kanal, {uyeSayisi} Üye, Sunucu Sahibi {sunucu.Owner.Username}, {sunucu.CreationTimestamp} Tarihinde Kuruldu";
                 //if (sunucu.Description.Length !< 1)
                 //{
