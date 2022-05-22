@@ -30,14 +30,13 @@ namespace HSMbot.Komutlar
         //[Command("temizle"), Description("1-100 arası girilen değerde mesajı siler.."), RequireBotPermissions(Permissions.ManageMessages), RequireGuild]
         //public async Task TemizleAsync(CommandContext ctx, [RemainingText, Description("1 ile 100 arasında değer girilmeli")] int deger)
         //{
-        //    if (deger == null)
+        //    if (deger <= 0)
         //    {
         //        await ctx.RespondAsync("1 ile 100 arasında sayı girin...");
         //    }
         //    else
         //    {
-
-
+        //        await ctx.Channel.DeleteMessagesAsync();
         //        await ctx.Channel.SendMessageAsync("**Başarılı!**");
         //    }
         //}
