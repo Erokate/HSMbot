@@ -50,17 +50,6 @@ namespace HSMbot.Komutlar
             
             var toplam = sayilar.Sum();
             await ctx.Message.Channel.SendMessageAsync(toplam.ToString());
-
-            //Sayının tek mi çift mi olduğunu sorgulayan komut...
-            //int sayi = 0;
-            //if (sayi1 % 2 == 0)
-            //{
-            //    await ctx.Message.Channel.SendMessageAsync("çift");
-            //}
-            //else if (sayi1 % 2 == 1)
-            //{
-            //    await ctx.Message.Channel.SendMessageAsync("tek");
-            //}
         }
     }
 }
