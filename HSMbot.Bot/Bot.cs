@@ -37,7 +37,6 @@ namespace HSMbot
                 json = await sr.ReadToEndAsync().ConfigureAwait(false);
 
             var configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
-            Console.WriteLine(configJson.Token);
             var config = new DiscordConfiguration
             {
                 Token = configJson.Token,
