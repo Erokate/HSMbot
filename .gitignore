@@ -363,5 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # İstenmeyen Dosyalar
-#config.jsonconfig.json 
+#config.json#config.json 
 *.bak
