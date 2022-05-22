@@ -363,6 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # İstenmeyen Dosyalar
-config.json
+ayarlar.json
 *.bak
 HSMBot.Bot/Properties/

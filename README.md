@@ -25,11 +25,11 @@ Bu bot discord sunucunuzda hem arkadaşlarınızla eğlenmek, hem de moderasyon 
   
 ## Configuration Dosyası
 
-Botun çalışması için bir configuration dosyasına ihtiyaç duymakta. Bu dosya `config.json` adıyla `HSMbot/HSMbot.Bot/` yolunun altında olmalı.
+Botun çalışması için bir configuration dosyasına ihtiyaç duymakta. Bu dosya `ayarlar.json` adıyla `HSMbot/HSMbot.Bot/` yolunun altında olmalı.
 
 Bu dosyanın içinde bota ait *perfix* ve *token* bulunuyor
 
-`HSMbot/HSMbot.Bot/` klasörünün içine `config.json` adlı bir dosya oluşturup şu kodu yazın: 
+`HSMbot/HSMbot.Bot/` klasörünün içine `ayarlar.json` adlı bir dosya oluşturup şu kodu yazın: 
 
 ```json
 {
