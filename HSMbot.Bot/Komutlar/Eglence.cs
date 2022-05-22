@@ -29,6 +29,7 @@ namespace HSMbot.Komutlar
             await ctx.Message.Channel.SendMessageAsync("SJ!");
         }
 
+        //Düzenlenmesi gereken bir komut
         [Command("KacCM"),Aliases("kaçcm")]
         [Description("Kaç cm bilmiyor musun? dene ve öğren...")]
         public async Task KacCMAsync(CommandContext ctx, [RemainingText] DiscordMember isim)
@@ -150,6 +151,7 @@ namespace HSMbot.Komutlar
         //    }
         //}
 
+        //Türk Lirası eklenecek
         [Command("yazıtura"), Description("Yazı Tura atar."), Aliases("yazitura")]
         public async Task YaziTura(CommandContext ctx)
         {
@@ -165,45 +167,46 @@ namespace HSMbot.Komutlar
             await ctx.RespondAsync(embed.Build());
         }
 
-        [Command("diyalogTest"), Aliases("dt"), Description("Diyalog Test ediyok bre susak"), RequireGuild]
-        public async Task DiyalogTest(CommandContext ctx)
-        {
+        //Deneme amaçlı yapılmış bir komut (başarılı sayılmaz. Gereksiz... Şimdilik...)
+        //[Command("diyalogTest"), Aliases("dt"), Description("Diyalog Test ediyok bre susak"), RequireGuild]
+        //public async Task DiyalogTest(CommandContext ctx)
+        //{
            
 
-            var funnyStep = new IntStep("AHAHAHHA\n31 AHAHAH", null, maxValue: 100);
-            var inputStep = new TextStep("Yazı yaz?!", null, 2);
+        //    var funnyStep = new IntStep("AHAHAHHA\n31 AHAHAH", null, maxValue: 100);
+        //    var inputStep = new TextStep("Yazı yaz?!", null, 2);
 
-            string input = string.Empty;
-            int value = 0;
+        //    string input = string.Empty;
+        //    int value = 0;
 
-            inputStep.OnValidResult += (result) =>
-            {
-                input = result;
+        //    inputStep.OnValidResult += (result) =>
+        //    {
+        //        input = result;
 
-                if (result == "Deneme3131")
-                {
-                    inputStep.SetNextStep(funnyStep);
-                }
-            };
+        //        if (result == "Deneme3131")
+        //        {
+        //            inputStep.SetNextStep(funnyStep);
+        //        }
+        //    };
 
-            funnyStep.OnValidResult += (result) => value = result;
+        //    funnyStep.OnValidResult += (result) => value = result;
 
-            var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
+        //    var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
 
-            var inputDialogueHandler = new DiyalogHandler(
-                ctx.Client,
-                userChannel,
-                ctx.User,
-                inputStep
-            );
+        //    var inputDialogueHandler = new DiyalogHandler(
+        //        ctx.Client,
+        //        userChannel,
+        //        ctx.User,
+        //        inputStep
+        //    );
 
-            bool succeeded = await inputDialogueHandler.ProcessDialogue().ConfigureAwait(false);
+        //    bool succeeded = await inputDialogueHandler.ProcessDialogue().ConfigureAwait(false);
              
-            if (!succeeded) { return; }
+        //    if (!succeeded) { return; }
 
-            await ctx.Channel.SendMessageAsync(input).ConfigureAwait(false);
+        //    await ctx.Channel.SendMessageAsync(input).ConfigureAwait(false);
 
-            await ctx.Channel.SendMessageAsync(value.ToString()).ConfigureAwait(false);
-        }
+        //    await ctx.Channel.SendMessageAsync(value.ToString()).ConfigureAwait(false);
+        //}
     }
 }

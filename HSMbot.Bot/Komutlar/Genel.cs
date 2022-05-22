@@ -42,14 +42,17 @@ namespace HSMbot.Komutlar
         //    }
         //}
 
+
+        //Klasik Bir Toplama Komudu...
         [Command("topla"), Description("Girilen sayıların toplamını verir"), Aliases("toplama")]
         public async Task Toplama(CommandContext ctx, [Description("Toplanacak sayılar")] params double[] sayilar /*[RemainingText] int sayi1*/)
         {
-            //int sayi = 0;
+            
             var toplam = sayilar.Sum();
             await ctx.Message.Channel.SendMessageAsync(toplam.ToString());
 
-
+            //Sayının tek mi çift mi olduğunu sorgulayan komut...
+            //int sayi = 0;
             //if (sayi1 % 2 == 0)
             //{
             //    await ctx.Message.Channel.SendMessageAsync("çift");

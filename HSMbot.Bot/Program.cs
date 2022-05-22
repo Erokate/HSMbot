@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Runtime;
+using DSharpPlus.Net;
 
 namespace HSMbot
 {
@@ -9,17 +10,11 @@ namespace HSMbot
     {
         static void Main(string[] args)
         {
-            //CreateHostBuilder(args).Build().Run();
             var bot = new Bot();
             bot.RunAsync().GetAwaiter().GetResult();
         }
 
-        //private static IHostBuilder CreateHostBuilder(string[] args) =>
-        //    Host.CreateDefaultBuilder(args)
-        //        .ConfigureHostConfiguration(webBuilder =>
-        //        {
-        //            webBuilder.UseStartup<Startup>();
-        //        });
+        
 
 
     }

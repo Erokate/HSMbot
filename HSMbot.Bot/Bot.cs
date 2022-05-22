@@ -29,6 +29,7 @@ namespace HSMbot
 
         public async Task RunAsync()
         {
+
             var json = string.Empty;
 
             using (var fs = File.OpenRead("config.json"))
@@ -36,7 +37,7 @@ namespace HSMbot
                 json = await sr.ReadToEndAsync().ConfigureAwait(false);
 
             var configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
-
+            Console.WriteLine(configJson.Token);
             var config = new DiscordConfiguration
             {
                 Token = configJson.Token,
@@ -80,7 +81,13 @@ namespace HSMbot
                 {
                     if (e.Message.Content.StartsWith("sa"))
                         await e.Message.RespondAsync("Aleyküm Selam! Hoş Geldin.");
-                    //await e.Message.CreateReactionAsync(elSallamaEmoji);
+                    //await e.Message.CreateReactionAsync(elSallamaEmoji); 
+                }
+                if (e.Message.Content.Length <= 7)
+                {
+                    if (e.Message.Content.StartsWith("Merhaba"))
+                        await e.Message.RespondAsync($"Merhaba {e.Message.Author.Mention} !");
+                    //await e.Message.CreateReactionAsync(elSallamaEmoji); 
                 }
 
                 if (e.Message.Author.IsBot)
@@ -116,6 +123,7 @@ namespace HSMbot
             //Command.SetHelpFormatter<Yardim>();
             //Command.RegisterCommands<Resimler>();
 
+            
             await Client.ConnectAsync();
 
             await Task.Delay(-1);

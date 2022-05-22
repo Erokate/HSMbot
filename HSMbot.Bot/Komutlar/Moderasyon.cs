@@ -91,6 +91,7 @@ namespace HSMbot.Komutlar
             }
         }
 
+        //Anket Düzgün Çalışmamakta
         [Command("Anket"), Description("Anket oluşturur"), RequireGuild, RequirePermissions(Permissions.ManageMessages)]
         public async Task Anket(CommandContext ctx, TimeSpan duration, params DiscordEmoji[] emojiOptions)
         {
