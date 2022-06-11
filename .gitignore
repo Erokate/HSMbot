@@ -366,3 +366,5 @@ FodyWeavers.xsd
 ayarlar.json
 *.bak
 HSMBot.Bot/Properties/
+*.sln
+.git*
