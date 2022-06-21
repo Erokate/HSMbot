@@ -18,6 +18,11 @@
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.2-mauipre.1.22102.15" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Komutlar\Oyunlar\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
