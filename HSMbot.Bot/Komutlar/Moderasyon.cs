@@ -50,7 +50,6 @@ namespace HSMbot.Komutlar
         [Description("Bota söylenen şeyi söyletir."), RequirePermissions(Permissions.ManageMessages)]
         public async Task SoyletAsync(CommandContext ctx, [RemainingText] string yazi)
         {
-            var interaktif = ctx.Client.GetInteractivity();
             if (yazi == null)
             {
                 var SoyletEmbedHata = new DiscordEmbedBuilder()

@@ -171,7 +171,7 @@ namespace HSMbot.Komutlar
         //[Command("diyalogTest"), Aliases("dt"), Description("Diyalog Test ediyok bre susak"), RequireGuild]
         //public async Task DiyalogTest(CommandContext ctx)
         //{
-           
+
 
         //    var funnyStep = new IntStep("AHAHAHHA\n31 AHAHAH", null, maxValue: 100);
         //    var inputStep = new TextStep("Yazı yaz?!", null, 2);
@@ -201,12 +201,34 @@ namespace HSMbot.Komutlar
         //    );
 
         //    bool succeeded = await inputDialogueHandler.ProcessDialogue().ConfigureAwait(false);
-             
+
         //    if (!succeeded) { return; }
 
         //    await ctx.Channel.SendMessageAsync(input).ConfigureAwait(false);
 
         //    await ctx.Channel.SendMessageAsync(value.ToString()).ConfigureAwait(false);
         //}
+
+
+
+        [Command("cekic"), Aliases("çekiç", "hammer"), Description("İstediğiniz Kişiye Çekiç Atarsınız.")]
+        public async Task CekicAsync(CommandContext ctx, DiscordMember member)
+        {
+            if (ctx.Message.Content.Length < 1)
+                await ctx.Message.Channel.SendMessageAsync("**Kime Çekiç Atcağımı Yazmalısın**");
+
+            var embed = new DiscordEmbedBuilder();
+            embed.WithAuthor("");
+            embed.WithColor(DiscordColor.Blue);
+            embed.WithDescription($"**{member.Mention}, `{ctx.Message.Author.Username}` Sana :hammer: Attı. Canın Yanmıştır!**");
+
+            await ctx.Message.Channel.SendMessageAsync(embed.Build());
+        }
+
+        
+
+
+
+
     }
 }
