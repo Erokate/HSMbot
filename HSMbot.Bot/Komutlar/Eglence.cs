@@ -1,9 +1,11 @@
 ﻿using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
+using DSharpPlus.Interactivity.Extensions;
 using HSMbot.Handlers.Diyalog;
 using HSMbot.Handlers.Diyalog.Steps;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HSMbot.Komutlar
@@ -167,48 +169,6 @@ namespace HSMbot.Komutlar
             await ctx.RespondAsync(embed.Build());
         }
 
-        //Deneme amaçlı yapılmış bir komut (başarılı sayılmaz. Gereksiz... Şimdilik...)
-        //[Command("diyalogTest"), Aliases("dt"), Description("Diyalog Test ediyok bre susak"), RequireGuild]
-        //public async Task DiyalogTest(CommandContext ctx)
-        //{
-
-
-        //    var funnyStep = new IntStep("AHAHAHHA\n31 AHAHAH", null, maxValue: 100);
-        //    var inputStep = new TextStep("Yazı yaz?!", null, 2);
-
-        //    string input = string.Empty;
-        //    int value = 0;
-
-        //    inputStep.OnValidResult += (result) =>
-        //    {
-        //        input = result;
-
-        //        if (result == "Deneme3131")
-        //        {
-        //            inputStep.SetNextStep(funnyStep);
-        //        }
-        //    };
-
-        //    funnyStep.OnValidResult += (result) => value = result;
-
-        //    var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
-
-        //    var inputDialogueHandler = new DiyalogHandler(
-        //        ctx.Client,
-        //        userChannel,
-        //        ctx.User,
-        //        inputStep
-        //    );
-
-        //    bool succeeded = await inputDialogueHandler.ProcessDialogue().ConfigureAwait(false);
-
-        //    if (!succeeded) { return; }
-
-        //    await ctx.Channel.SendMessageAsync(input).ConfigureAwait(false);
-
-        //    await ctx.Channel.SendMessageAsync(value.ToString()).ConfigureAwait(false);
-        //}
-
 
 
         [Command("cekic"), Aliases("çekiç", "hammer"), Description("İstediğiniz Kişiye Çekiç Atarsınız.")]
@@ -225,10 +185,98 @@ namespace HSMbot.Komutlar
             await ctx.Message.Channel.SendMessageAsync(embed.Build());
         }
 
-        
+        [Command("sigara")]
+        public async Task Sigara(CommandContext ctx)
+        {
 
+            Random rnd = new Random();
+            int ihtimal = rnd.Next(1, 11);
 
+            await ctx.TriggerTypingAsync();
+            await ctx.Message.Channel.SendMessageAsync("Sigara yakıyorum..");
+            Thread.Sleep(1500);
+            if (ihtimal >= 1 && ihtimal <= 2)
+            {
+                await ctx.TriggerTypingAsync();
+                await ctx.Message.Channel.SendMessageAsync("Ah olamaz çakmağımın gazı bitmiş.\nÇakmak verir misin?\n**Ver** / **Verme**");
+                var cevap = await ctx.Message.GetNextMessageAsync(m =>
+                {
+                    return m.Content.ToLower() == "ver" || m.Content.ToLower() == "verme";
+                });
+                if (cevap.Equals("ver"))
+                {
+                    await ctx.TriggerTypingAsync();
+                    await ctx.Message.Channel.SendMessageAsync("Teşekkür Ederim.\nSigara yakıyorum..");
+                    Thread.Sleep(1500);
+                    await ctx.Message.ModifyAsync("🚬");
+                    Thread.Sleep(1000);
+                    await ctx.Message.ModifyAsync("🚬 ☁");
+                    Thread.Sleep(500);
+                    await ctx.Message.ModifyAsync("🚬 ☁☁");
+                    Thread.Sleep(500);
+                    await ctx.Message.ModifyAsync("🚬 ☁☁☁");
+                    Thread.Sleep(500);
+                    await ctx.Message.ModifyAsync("🚬 ☁☁");
+                    Thread.Sleep(500);
+                    await ctx.Message.ModifyAsync("🚬 ☁");
+                    Thread.Sleep(500);
+                    await ctx.Message.ModifyAsync("🚬");
+                    Thread.Sleep(1500);
+                    await ctx.Message.ModifyAsync("Sigaram Bitti...");
+                    return;
+                }
+                else if (cevap.Equals("verme"))
+                {
+                    await ctx.TriggerTypingAsync();
+                    await ctx.Message.Channel.SendMessageAsync("Ah... Üzüldüm. Öyle olsun ben gidiyorum.");
+                    return;
+                }
+                else
+                {
+                    await ctx.TriggerTypingAsync();
+                    await ctx.Message.Channel.SendMessageAsync("Ne diyorsun? Sadece çakmak sordum. Tamam, verme ben gidiyorum.");
+                    return;
+                }
+            }
+            if (ihtimal >= 3 && ihtimal <= 10)
+            {
+                await ctx.Message.ModifyAsync("🚬");
+                Thread.Sleep(1000);
+                await ctx.Message.ModifyAsync("🚬 ☁");
+                Thread.Sleep(500);
+                await ctx.Message.ModifyAsync("🚬 ☁☁");
+                Thread.Sleep(500);
+                await ctx.Message.ModifyAsync("🚬 ☁☁☁");
+                Thread.Sleep(500);
+                await ctx.Message.ModifyAsync("🚬 ☁☁");
+                Thread.Sleep(500);
+                await ctx.Message.ModifyAsync("🚬 ☁");
+                Thread.Sleep(500);
+                await ctx.Message.ModifyAsync("🚬");
+                Thread.Sleep(1500);
+                await ctx.Message.ModifyAsync("Sigaram Bitti...");
+            }
 
+        }
+
+        //[Command("mcbasarim"), Aliases("mcbaşarım")]
+        //public async Task MCBasarim(CommandContext ctx, string mesaj1, string mesaj2)
+        //{
+        //    Random rnd = new Random();
+
+        //}
+
+        //[Command("kus"), Aliases("bird", "kuş"), Description("Rastgele kuş gifi yollar.")]
+        //public async Task Kus(CommandContext ctx)
+        //{
+        //    await ctx.Message.Channel.SendMessageAsync("Bu komut hala test aşamasında.");
+        //}
+
+        //[Command("TasKagitMakas"), Aliases("tkm", "rps", "RockPaperScissors"), Description("Bildiğimiz taş kağıt makas oyunu.")]
+        //public async Task RPS(CommandContext ctx, [RemainingText]DiscordMember kullanici)
+        //{
+
+        //}
 
     }
 }
