@@ -5,6 +5,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
+using DSharpPlus.SlashCommands;
 using HSMbot.Komutlar;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,8 +65,6 @@ namespace HSMbot
                 Timeout = TimeSpan.FromSeconds(60)
             });
 
-
-
             //var elSallamaEmoji = DiscordEmoji.FromName(ctx.Client, ":wave:");
 
             Client.MessageCreated += async (s, e) =>
@@ -106,7 +106,7 @@ namespace HSMbot
 
             var cmdConfig = new CommandsNextConfiguration
             {
-                StringPrefixes = new string[] { configJson.Prefix }, //Botun Prefixi (config.json)
+                StringPrefixes = new string[] { configJson.Prefix, "hsm", "h*", "h" }, //Botun Prefixi (config.json)
                 EnableMentionPrefix = true, //Botu etiketleyerek komut kullanma
                 EnableDms = false, //Özel mesajlarda komut kullanma
                 DmHelp = false, //Help komutu girildiğinde komutları özelden atma
