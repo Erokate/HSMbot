@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HSMbot.Komutlar
@@ -126,6 +127,23 @@ namespace HSMbot.Komutlar
 
             await ctx.Channel.SendMessageAsync(sonucEmbed.Build()).ConfigureAwait(false);
 
+        }
+
+        [Command("temizle"), Aliases("clear", "Sil"), Description("Girilen sayıda mesaj siler.\nMesajları Düzenleme Yetkisi Gerekir"), 
+            RequirePermissions(Permissions.ManageMessages), 
+            RequireBotPermissions(Permissions.ManageMessages)]
+        public async Task Temizle(CommandContext ctx, [Description("Silinecek mesaj sayısı")]int miktar)
+        {
+            IReadOnlyList<DiscordMessage> mesajlar = await ctx.Channel.GetMessagesAsync(miktar + 1).ConfigureAwait(false);
+            await ctx.Channel.DeleteMessagesAsync(mesajlar).ConfigureAwait(false);
+            DiscordEmbedBuilder embed = new DiscordEmbedBuilder()
+                .WithColor(new DiscordColor(3, 184, 255))
+                .WithFooter($"Komudu kullanan kişi {ctx.Message.Author.Username}#{ctx.Message.Author.Discriminator}")
+                .WithDescription($"**{mesajlar.Count - 1} Mesaj Başarıyla Silindi!**");
+            Thread.Sleep(500);
+            await ctx.TriggerTypingAsync();
+            await ctx.Message.Channel.SendMessageAsync(embed.Build());
+            
         }
     }
 }
