@@ -14,7 +14,7 @@ Bu bot discord sunucunuzda hem arkadaşlarınızla eğlenmek, hem de moderasyon 
 ## Bot Oluşturulurken Neler Kullanıldı?
 
 - [DSharpPlus](https://www.nuget.org/packages/DSharpPlus)
-- [.NET Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
+- [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
   
 ## Bot Hakkında
 
