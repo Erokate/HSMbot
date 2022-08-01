@@ -45,7 +45,7 @@ Mail: yigiterengnrr@gmail.com
 
 Twitter [@yigiterengnr](https://twitter.com/yigiterengnr)
 
-Discord: Erokate#8457
+Discord: Erokate#0001
 
 
 
